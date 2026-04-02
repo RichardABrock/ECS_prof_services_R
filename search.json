@@ -1,0 +1,446 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ECS Professional services R course",
+    "section": "",
+    "text": "[cite_start]This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: * Introduction to R: Getting familiar with the environment. * Introduction to coding and tidyverse: Learning the basics of coding * Emailing: Automating communications. * Officer: Generating Word and PowerPoint documents.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "ECS Professional services R course",
+    "section": "",
+    "text": "[cite_start]This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: * Introduction to R: Getting familiar with the environment. * Introduction to coding and tidyverse: Learning the basics of coding * Emailing: Automating communications. * Officer: Generating Word and PowerPoint documents.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "chapters/2_email.html",
+    "href": "chapters/2_email.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "Describe your analytical approach here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/2_email.html#methods",
+    "href": "chapters/2_email.html#methods",
+    "title": "Analysis",
+    "section": "",
+    "text": "Describe your analytical approach here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/2_email.html#results",
+    "href": "chapters/2_email.html#results",
+    "title": "Analysis",
+    "section": "2 Results",
+    "text": "2 Results\nPresent your analysis and results here.\n\n# Your R code here",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html",
+    "href": "chapters/1_intro.html",
+    "title": "Intro",
+    "section": "",
+    "text": "This short course aims to take you through the process of writing your first programs in the R statistical programming language to analyse national and international educational datasets. To do this we will be using the R Studio integrated development environment (IDE), a desktop application to support you in writing R scripts. R Studio supports your programming by flagging up errors in your code as you write it, and helping you manage your analysis environment by giving you quick access to tables, objects and graphs as you develop them. In addition, we will be looking at data analysis using the tidyverse code packages. The tidyverse is a standardised collection of supporting code that helps you read data, tidy it into a usable format, analyse it and present your findings.\nThe R programming language offers similar functionality to an application based statistical tool such as SPSS, with more of a focus on you writing code to solve your problems, rather than using prebuilt tools. R is open source, meaning that it is free to use and that lots of people have written code in R that they have shared with others. R statistical libraries are some of the most comprehensive in existence. R is popular1 in academia and industry, being used for everything from sales modelling to cancer detection.\n\n# This example shows how R can pull data directly from the internet\n# tidy it and start making graphs. All within 9 lines of code\nlibrary(tidyverse)\n\neducation &lt;- read_csv(\n  \"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv\")\n\neducation %&gt;%\n  filter(agefrom == 15, ageto == 24,\n         country %in% c(\"Germany\",\"France\",\"Italy\",\"United Kingdom\")) %&gt;%\n  ggplot(aes(x=year, y=yr_sch, colour=country)) +\n  geom_point() +\n  geom_line()\n\n\n\n\n\n\n\n\nWhilst it is possible to use R through menu systems and drop down tools, the focus of this course is for you to write your own R scripts. These are text files that will tell the computer how to go through the process of loading, cleaning, analysing and presenting data. The sequential and modular nature of these files makes it very easy to develop and test each stage separately, reuse code in the future, and share with others.\nThis booklet is written with the following sections to support you:\n\n# Code examples and questions appear like this\na &lt;- 1 + 3\n\n[1] Code output appears like this\nCourier font indicates keyboard presses, column names, column values and function names.\n&lt;folder&gt; Courier font within brackets describe values that can be passed to functions and that you need to define yourself. I.e. copying and pasting these code chunks verbatim won’t work!\n\n\n\n\n\n\nNote\n\n\n\nspecifies things to note\n\n\n\n\n\n\n\n\nWarning\n\n\n\ngives warning messages\n\n\n\n\n\n\n\n\nImportant\n\n\n\nhighlights issues that might break your code\n\n\n\n\n\n\n\n\nTip\n\n\n\ngives suggestions on how to do things in a better way\n\n\n\nActivities and coding tasks look like this\n\nwhat &lt;- \"does this\"\ncode == \"do\"",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#introduction",
+    "href": "chapters/1_intro.html#introduction",
+    "title": "Intro",
+    "section": "",
+    "text": "Write background and context for your project here. This section might include:\n\nResearch questions or objectives\nRelevant literature\nData sources",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#data",
+    "href": "chapters/1_intro.html#data",
+    "title": "Intro",
+    "section": "2 Data",
+    "text": "2 Data\nDescribe your data here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/3_officer.html",
+    "href": "chapters/3_officer.html",
+    "title": "Results",
+    "section": "",
+    "text": "Summarise your key findings here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/3_officer.html#summary",
+    "href": "chapters/3_officer.html#summary",
+    "title": "Results",
+    "section": "",
+    "text": "Summarise your key findings here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/3_officer.html#conclusions",
+    "href": "chapters/3_officer.html#conclusions",
+    "title": "Results",
+    "section": "2 Conclusions",
+    "text": "2 Conclusions\nWrite your conclusions here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/3_officer.html#references",
+    "href": "chapters/3_officer.html#references",
+    "title": "Results",
+    "section": "3 References",
+    "text": "3 References",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/2_coding.html#questions",
+    "href": "chapters/2_coding.html#questions",
+    "title": "Learning to code",
+    "section": "1.1 Questions",
+    "text": "1.1 Questions\n\nUsing the student_data dataset:\n\nUse the Environment window to view the dataset, what is the name of the 6th column? What are allowed values of the column?\n\n\n\nanswer\n# the 5th column is Country\n\n# you could use View() instead of the environment window, note the capital V\nView(student_data)\n# use could use the vector subset to fetch the 100th name\nnames(student_data)[5]\n# [1] \"Country\"\n\n# you can use the unique function to find the values\nunique(student_data$Country)\n\n\n\nUse the dollar sign $ to return the vector Programme. What programmes are stored in the vector?\n\n\n\nanswer\n# Programme vector\nstudent_data$Programme\n\n # [1] \"MA STEM Education\"                \"MA STEM Education\"               \n #  [3] \"MA STEM Education\"                \"MA Education\"                    \n #  [5] \"MA Education, Policy and Society\" \"MA Education, Policy and Society\"\n #  [7] \"MA Education, Policy and Society\" \"MA STEM Education\"               \n #  [9] \"MA STEM Education\"                \"MA Education\"                    \n # [11] \"MA Education Management\"          \"MA STEM Education\"               \n # [13] \"MA STEM Education\"                \"MA Education\"                    \n # [15] \"MA Education\"                     \"MA STEM Education\"\n\n\n\n\n\n\n\n\nTip\n\n\n\nSometimes R will truncate the ouput so you won’t see all the data:\n[95] “MA Education” “MA Education”\n[97] “MA Education” “MA Education”\n[99] “MA Education, Policy and Society” “MA STEM Education”\n[ reached ‘max’ / getOption(“max.print”) – omitted 100 entries ]\nTo get more data run: options(max.print = 1000) setting the maximunm to your preference\n\n\n\nHow many students are in the whole dataframe?\n\n\n\nanswer\nnrow(student_data)\n# [1] 200\n\n\n\nWhat are the maximum, mean, median and minumum scores in 7SSES007 - Leading Practices in STEM Education\n\n\n\nanswer\n# remember to set the na.rm = TRUE\nmax(student_data$`7SSES007 - Leading Practices in STEM Education`, na.rm=TRUE)\n# [1] 86\nmean(student_data$`7SSES007 - Leading Practices in STEM Education`, na.rm=TRUE)\n# [1] 63.02941\nmedian(student_data$`7SSES007 - Leading Practices in STEM Education`, na.rm=TRUE)\n# [1] 65\nmin(student_data$`7SSES007 - Leading Practices in STEM Education`, na.rm=TRUE)\n# [1] 40\n\n\n\nExplore the dataset and makes notes about the range of values of 2 other columns",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to coding"
+    ]
+  },
+  {
+    "objectID": "chapters/2_coding.html#piping-and-dplyr",
+    "href": "chapters/2_coding.html#piping-and-dplyr",
+    "title": "Learning to code",
+    "section": "1.2 “Piping and dplyr”",
+    "text": "1.2 “Piping and dplyr”\nPiping allows us to break down complex tasks into manageable chunks that can be written and tested one after another. There are several powerful commands in the tidyverse as part of the dplyr package that can help us group, filter, select, mutate and summarise datasets. With this small set of commands we can use piping to convert massive datasets into simple and useful results.\nUsing the pipe %&gt;% command, we can feed the results from one command into the next command making for reusable and easy to read code.\n\n\n\nhow piping works\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe pipe command we are using %&gt;% is from the magrittr package which is installed alongside the tidyverse. Recently R introduced another pipe |&gt; which offers very similar functionality and tutorials online might use either. The examples below use the %&gt;% pipe.\n\n\nLet’s look at an example of using the pipe on the student_data table to calculate the mean scores in MA STEM Education by gender for international students\n\n1student_data %&gt;%\n  filter(Registration == \"International\" &\n2           Programme == \"MA STEM Education\") %&gt;%\n  select(`7SSES007 - Leading Practices in STEM Education`, Gender) %&gt;%\n3  group_by(Gender) %&gt;%\n  summarise(mean_score = mean(`7SSES007 - Leading Practices in STEM Education`,\n4                              na.rm=TRUE),\n            sd_score = sd(`7SSES007 - Leading Practices in STEM Education`,\n                          na.rm=TRUE),       \n            students = n()) %&gt;%                       \n6  arrange(desc(mean_score))\n\n\n1\n\nLine 1: Takes the full student_data dataset and pipes it into the next command using %&gt;%.\n\n2\n\nLine 2: Filters the dataset to keep only students whose Registration is “International” and who are in the “MA STEM Education” programme. The filtered dataset is piped to the next step.\n\n3\n\nLine 3: Selects only the relevant columns: the scorein 7SSES007 - Leading Practices in STEM Education and Gender. Only these columns are retained for the next steps.\n\n4\n\nLine 4: Groups the data by Gender. This means that subsequent summary operations are calculated separately for each gender group.\n\n6\n\nLine 9: Sorts (arrange) the resulting grouped summary in descending order of mean_score, so the gender with the highest mean score appears first. By default, arrange() sorts in ascending order, so desc() is used to reverse it.\n\n\n\n\n# A tibble: 3 × 4\n  Gender mean_score sd_score students\n  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;int&gt;\n1 Male         66.9    14.5        11\n2 Other        60       1.73       13\n3 Female       58.6    12.2        10\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe met the assignment command earlier &lt;-. Within the tidyverse commands we use the equals sign instead =.\n\n\nThe commands we have just used come from a package within the tidyverse called dplyr, let’s take a look at what they do:\n\n\n\n\n\n\n\n\ncommand\npurpose\nexample\n\n\n\n\nselect\nreduce the dataframe to the fields that you specify\nselect(&lt;field&gt;, &lt;field&gt;, &lt;field&gt;)\n\n\nfilter\nget rid of rows that don’t meet one or more criteria\nfilter(&lt;field&gt; &lt;comparison&gt;)\n\n\ngroup\ngroup fields together to perform calculations\ngroup_by(&lt;field&gt;, &lt;field&gt;))\n\n\nmutate\nadd new fields or change values in current fields\nmutate(&lt;new_field&gt; = &lt;field&gt; / 2)\n\n\nsummarise\ncreate summary data optionally using a grouping command\nsummarise(&lt;new_field&gt; = max(&lt;field&gt;))\n\n\narrange\norder the results by one or more fields\narrange(desc(&lt;field&gt;))\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf you want to explore more of the functions of dplyr, take a look at the helpsheet\n\n\n\nAdjust the code above to find the mean scores of home students by gender in 7SSEM023 - Language and Power\n\n\nanswer\nstudent_data %&gt;%                                \n  filter(Registration == \"Home\") %&gt;%  \n  select(`7SSEM023 - Language and Power`, Gender) %&gt;%\n  group_by(Gender) %&gt;%                      \n  summarise(mean_score = mean(`7SSEM023 - Language and Power`,\n                              na.rm=TRUE)) %&gt;%                       \n  arrange(desc(mean_score))",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to coding"
+    ]
+  },
+  {
+    "objectID": "chapters/2_coding.html#questions-1",
+    "href": "chapters/2_coding.html#questions-1",
+    "title": "Learning to code",
+    "section": "2.1 Questions",
+    "text": "2.1 Questions\n\n\nSpot the three errors with the following select statement\n\n\nstudent_data \n  select(Country Gender) %&gt;%\n\n\n\nanswer\nstudent_data %&gt;%  #1 missing pipe\n  select(Country, Gender) #2 no comma between column names, #3 stray pipe on end\n\n\n\nWrite a select statement to display the Name, Gender and Date of Birth of each student.\n\n\n\nanswer\nstudent_data %&gt;% \n  select(Name, Gender, DateOfBirth)\n\n\n\nWrite a select statement to show all the fields from the MA STEM (they have module codes starting “7SSES”)\n\n\n\nanswer\nstudent_data %&gt;% \n  select(starts_with(\"7SSES\"))\n\n\n\n[EXTENSION] Adjust your answer to Q3 so that you select the gender student ID of each student in addition to the MA STEM fields:\n\n\n\nanswer\nstudent_data %&gt;% \n  select(StudentID, Gender, starts_with(\"7SSES\"))",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to coding"
+    ]
+  },
+  {
+    "objectID": "chapters/2_coding.html#questions-2",
+    "href": "chapters/2_coding.html#questions-2",
+    "title": "Learning to code",
+    "section": "3.1 Questions",
+    "text": "3.1 Questions\n\n\nSpot the two errors with the following select statement\n\n\nstudent_data\n  select(Country, `7SSEM071 - Gender, Power and Inequality`) %&gt;%\n  filter(Country = \"India\")\n\n\n\nanswer\nstudent_data %&gt;%  #1 missing pipe command\n  select(Country, `7SSEM071 - Gender, Power and Inequality`)  %&gt;%\n  filter(Country = \"India\") #2 you need a double equals\n\n\n\nUse filter to find all the students with a disseration grade equal to 50 - what are their names?\n\n\n\nanswer\nstudent_data %&gt;%\n  filter(`7SSEM066 - Research Methods and Dissertation (60 credits)` == 50)\n\n\n\nUse filter to find students who got over 70 in 7SSEM066 - Research Methods and Dissertation and over 70 in 7SSES008 - STEM Education in the Workplace\n\n\n\nanswer\nstudent_data %&gt;%\n  filter(`7SSEM066 - Research Methods and Dissertation (60 credits)` &gt; 70 &\n          `7SSES008 - STEM Education in the Workplace` &gt; 70 )\n\n\n\nSpot the three errors with the following select statement\n\n\nstudent_data %&gt;% \n  select(Country) %&gt;%\n  filter(Country in c(\"India\", \"nigeria\")\n         `7SSEM066 - Research Methods and Dissertation (60 credits)` &lt; 60)\n\n\n\nanswer\nstudent_data %&gt;% \n  select(Country) %&gt;% #1 you have 7SSEM066 in the filter, it needs to be in the select as well\n  filter(Country in c(\"India\", \"nigeria\") #2 Nigeria needs a capital letter\n         `7SSEM066 - Research Methods and Dissertation (60 credits)` &lt; 60) #3 the %in% command needs percentages, and you need a comma (or &) at the end of the line\n\n\n\nUse filter to find all the students who are “Extremely dissatisfied” - are there more or fewer students “extremely dissatisfied” than are “Extremely satisfied”?\n\n\n\nanswer\n# Extremely dissatisfied\nstudent_data %&gt;%\n  select(Name, `course satisfaction`) %&gt;%\n  filter(`course satisfaction` == \"Extremely dissatisfied\")\n\n# Extremely satisfied\nstudent_data %&gt;%\n  select(Name, `course satisfaction`) %&gt;%\n  filter(`course satisfaction` == \"Extremely satisfied\")\n\n\n\nAdjust your code in Q5. to find the number of students who are Extremely satisfied and are from the UK. how does this compare with those from China?\n\n\n\nanswer\nstudent_data %&gt;%\n  select(Name, `course satisfaction`, Country) %&gt;%\n  filter(`course satisfaction` == \"Extremely satisfied\" &\n          Country == \"UK\")\n\nstudent_data %&gt;%\n  select(Name, `course satisfaction`, Country) %&gt;%\n  filter(`course satisfaction` == \"Extremely satisfied\" &\n          Country == \"China\")\n\n# EXTENSION:\n# Note we would need to know the percentage of students \n# in each country who are extremely satisfied to make a proper\n# comparison. \n\nstudent_data %&gt;%\n  select(Country,  `course satisfaction`) %&gt;%\n  filter(Country %in% c(\"UK\", \"China\")) %&gt;%\n  group_by(Country) %&gt;%\n  mutate(total_stus = n()) %&gt;%\n  filter(`course satisfaction` == \"Extremely satisfied\") %&gt;%\n  summarise(ext_satisfied_n = n(),\n            per_ext_satisfied_n  = ext_satisfied_n/unique(total_stus) * 100)\n\n\n\nWrite a filter to create a table for the number of Female students with reading dissertation scores lower than 50 from the UK, store the result as diss_low_female, repeat but for Male students and store as read_low_male. Use nrow() to work out if there are more males or females with a low reading score in the UK\n\n\n\nanswer\ndiss_low_female &lt;- student_data %&gt;% \n  filter(Country == \"UK\",\n         `7SSEM066 - Research Methods and Dissertation (60 credits)` &lt; 50,\n         Gender == \"Female\")\n\ndiss_low_male &lt;- student_data %&gt;% \n  filter(Country == \"UK\",\n         `7SSEM066 - Research Methods and Dissertation (60 credits)` &lt; 50,\n         Gender == \"Male\")\n\nnrow(diss_low_female)\nnrow(diss_low_male)\n\n# You could also pipe the whole dataframe into nrow()\nstudent_data %&gt;% \n  filter(Country == \"UK\",\n         `7SSEM066 - Research Methods and Dissertation (60 credits)` &lt; 50,\n         Gender == \"Female\") %&gt;% \n  nrow()\n\n\n\nWhich students having missing values for Gender, remember to check for NA using is.na()?\n\n\n\nanswer\nstudent_data %&gt;% \n  filter(is.na(Gender)) %&gt;%\n  select(Name, Gender)",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to coding"
+    ]
+  },
+  {
+    "objectID": "chapters/2_coding.html#questions-3",
+    "href": "chapters/2_coding.html#questions-3",
+    "title": "Learning to code",
+    "section": "5.1 Questions",
+    "text": "5.1 Questions\n\n\nSpot the three errors with the following summarise statement\n\n\nstudent_data %&gt;% \n  group(Country)\n  summarise(num_stus = n)\n\n\n\nanswer\nstudent_data %&gt;% \n  group_by(Country) %&gt;% #1 group_by NOT group #2 missing pipe %&gt;%\n  summarise(num_stus = n()) #3 = n() not = n\n\n\n\nuse group_by and summarise to count (n()) the number of students who are male or female\n\n\n\nanswer\nstudent_data %&gt;% \n  group_by(Gender) %&gt;%\n  summarise(num_stus = n())\n  \n# Also, if you only want a count, you can use:\nstudent_data %&gt;% \n  group_by(Gender) %&gt;%\n  count()\n\n\n\nsummarise the number of students who are male or female by country\n\n\n\nanswer\nstudent_data %&gt;% \n  group_by(Country, Gender) %&gt;%\n  summarise(num_stus = n())\n\n\n\nWrite a group_by and summarise statement to work out the mean and median score on 7SSEM030 - Psychology and Learning for each student by country Country\n\n\n\nanswer\nstudent_data %&gt;%\n  group_by(Country) %&gt;%\n  summarise(psych_mean = mean(`7SSEM030 - Psychology and Learning`, na.rm=TRUE),\n            psych_median = median(`7SSEM030 - Psychology and Learning`, na.rm=TRUE))\n\n\n\nUsing summarise work out, the numbers of students who have different levels of programme satisfaction by gender. Remove the NA values before starting\n\n\n\nanswer\nstudent_data %&gt;%\n  select(`course satisfaction`, Gender) %&gt;%\n  filter(!is.na(`course satisfaction`)) %&gt;%\n  group_by(Gender, `course satisfaction`) %&gt;% \n  summarise(n=n())",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to coding"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html",
+    "href": "chapters/4_officer.html",
+    "title": "Results",
+    "section": "",
+    "text": "Summarise your key findings here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html#summary",
+    "href": "chapters/4_officer.html#summary",
+    "title": "Results",
+    "section": "",
+    "text": "Summarise your key findings here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html#conclusions",
+    "href": "chapters/4_officer.html#conclusions",
+    "title": "Results",
+    "section": "2 Conclusions",
+    "text": "2 Conclusions\nWrite your conclusions here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html#references",
+    "href": "chapters/4_officer.html#references",
+    "title": "Results",
+    "section": "3 References",
+    "text": "3 References",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#introduction-to-r",
+    "href": "chapters/1_intro.html#introduction-to-r",
+    "title": "Intro",
+    "section": "",
+    "text": "This short course aims to take you through the process of writing your first programs in the R statistical programming language to analyse national and international educational datasets. To do this we will be using the R Studio integrated development environment (IDE), a desktop application to support you in writing R scripts. R Studio supports your programming by flagging up errors in your code as you write it, and helping you manage your analysis environment by giving you quick access to tables, objects and graphs as you develop them. In addition, we will be looking at data analysis using the tidyverse code packages. The tidyverse is a standardised collection of supporting code that helps you read data, tidy it into a usable format, analyse it and present your findings.\nThe R programming language offers similar functionality to an application based statistical tool such as SPSS, with more of a focus on you writing code to solve your problems, rather than using prebuilt tools. R is open source, meaning that it is free to use and that lots of people have written code in R that they have shared with others. R statistical libraries are some of the most comprehensive in existence. R is popular1 in academia and industry, being used for everything from sales modelling to cancer detection.\n\n# This example shows how R can pull data directly from the internet\n# tidy it and start making graphs. All within 9 lines of code\nlibrary(tidyverse)\n\neducation &lt;- read_csv(\n  \"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv\")\n\neducation %&gt;%\n  filter(agefrom == 15, ageto == 24,\n         country %in% c(\"Germany\",\"France\",\"Italy\",\"United Kingdom\")) %&gt;%\n  ggplot(aes(x=year, y=yr_sch, colour=country)) +\n  geom_point() +\n  geom_line()\n\n\n\n\n\n\n\n\nWhilst it is possible to use R through menu systems and drop down tools, the focus of this course is for you to write your own R scripts. These are text files that will tell the computer how to go through the process of loading, cleaning, analysing and presenting data. The sequential and modular nature of these files makes it very easy to develop and test each stage separately, reuse code in the future, and share with others.\nThis booklet is written with the following sections to support you:\n\n# Code examples and questions appear like this\na &lt;- 1 + 3\n\n[1] Code output appears like this\nCourier font indicates keyboard presses, column names, column values and function names.\n&lt;folder&gt; Courier font within brackets describe values that can be passed to functions and that you need to define yourself. I.e. copying and pasting these code chunks verbatim won’t work!\n\n\n\n\n\n\nNote\n\n\n\nspecifies things to note\n\n\n\n\n\n\n\n\nWarning\n\n\n\ngives warning messages\n\n\n\n\n\n\n\n\nImportant\n\n\n\nhighlights issues that might break your code\n\n\n\n\n\n\n\n\nTip\n\n\n\ngives suggestions on how to do things in a better way\n\n\n\nActivities and coding tasks look like this\n\nwhat &lt;- \"does this\"\ncode == \"do\"",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#installation-on-your-own-machine-for-kcl-staff",
+    "href": "chapters/1_intro.html#installation-on-your-own-machine-for-kcl-staff",
+    "title": "Intro",
+    "section": "1.1 Installation (on your own machine) for KCL staff",
+    "text": "1.1 Installation (on your own machine) for KCL staff\n\nOpen the KCL Software Centre (using the launchpad on your mac or the start menu on your pc)\n\n\n\nSearch for “R binary” and install the latest version of R.\n\n\n\nSearch for “RStudio Desktop” and install the latest version of RStudio.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#sec-installation",
+    "href": "chapters/1_intro.html#sec-installation",
+    "title": "Intro",
+    "section": "1.2 Installation (on your own machine)",
+    "text": "1.2 Installation (on your own machine)\n\nInstall R (default settings should be fine)\n\nWindows users visit: here\nMac users visit: here and make sure you get the correct version of R: for Apple silicon (M1-3) Macs (~November 2020 onwards), or older Intel Macs (~up to November 2020)\nLinux users visit: here\n\nInstall RStudio, visit here and it should present you with the version suitable for your operating system.\n\n(If the above doesn’t work follow the instructions here)",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#sec-packages",
+    "href": "chapters/1_intro.html#sec-packages",
+    "title": "Intro",
+    "section": "1.3 Setting up RStudio and the tidyverse",
+    "text": "1.3 Setting up RStudio and the tidyverse\n\nOpen RStudio\nOn the bottom right-hand side, select Packages, then select Install, then type “tidyverse” into the Packages field of the new window:\n\nClick Install and you should see things happening in the console (bottom left). Wait for the console activity to finish (it’ll be downloading and checking packages). If it asks any questions, type N for no and press enter.\nAdd a new R Script using the  button\n\nIn the new R script, write the following:\n\nSelect all the lines and press Control or Command ⌘ and Enter on your keyboard at the same time. Alternatively, press the  button\n\nCheck that you have the following in the console window (depending on your screen size you might have fewer columns):\n\nInstall the arrow package, repeat step 2, above.\nDownload the dummy_student_records dataset from here and download it on your computer, make a note of the full folder location where you have saved this!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you need help with finding the full folder location of your file, often a hurdle for Mac users, go to Section 10\n\n\n\nCopy the following code and replace &lt;folder&gt; with the full folder location of where your dataset was saved, make sure that you have .parquet on the end. And keep the (r\"[  ]\")! Make sure you run all the lines in the code below, including the library(readxl) and library(tidyverse) lines.\n\n\n\nexamples of what this should look like for PC and Mac\n# For Pete (PC) the address format was:\nstudent_data &lt;- read_xlsx(r\"[C:\\Users\\Peter\\KCL\\ProfR\\dummy_student_records.xlsx]\")\n\n# For Richard (Mac) the address format was:\nstudent_data &lt;- read_xlsx(r\"[/Users/k1765032/Library/CloudStorage/OneDrive-King\\'sCollegeLondon/Prof_serv_R/dummy_student_records.xlsx]\")\n\n\n\nlibrary(readxl)\nlibrary(tidyverse)\n\nPISA_2022 &lt;- read_xlsx(r\"[&lt;folder&gt;dummy_student_records.xlsx]\")\n\n\nUnderneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it. Try and figure out what each line does and what it’s telling you.\n\n\nlibrary(tidyverse)\n\nstudent_data %&gt;%\n  select(Gender, `7SSES009 - Quantitative Methods in the Context of Education Research`) %&gt;%\n  group_by(Gender) %&gt;%\n  summarise(mean_score = mean(`7SSES009 - Quantitative Methods in the Context of Education Research`, na.rm =T),\n            count = n())\n\n\nThat’s it, you should be set up!\nAny issues, please drop a message on the Teams group, or mail peter.kemp@kcl.ac.uk and richard.brock@kcl.ac.uk",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#objects-and-instructions",
+    "href": "chapters/1_intro.html#objects-and-instructions",
+    "title": "Intro",
+    "section": "3.1 Objects and instructions",
+    "text": "3.1 Objects and instructions\nIn programming languages we can attach data to a name, this is called assigning a value to an object (you might also call them variables). To do this in R we use the &lt;- arrow command. For example, I want to put the word \"Pete\" into an object called myname (note that words and sentences such as \"Pete\" need speech marks):\n\nmyname &lt;- \"Pete\"\nprint(myname)\n\n[1] \"Pete\"\n\n\nWe can also perform quick calculations and assign them to objects:\n\nHoursInYear &lt;- 365 * 24\nprint(HoursInYear) \n\n[1] 8760\n\n\n\nType the two examples above into your RStudio script file and check that they work. Adapt them to say your full name and give the number of MinutesInADay\n\n\n\n\n\n\n\nTip\n\n\n\nRemember to select code and press control or command and Enter to run it\n\n\nObjects can form part of calculations, for example, the code below shows how we can use the number HoursInYear to (roughly!) calculate the number of HoursInWeek:\n\nHoursInYear &lt;- 365 * 24\n\nHoursInWeek &lt;- HoursInYear / 52\nprint(HoursInWeek)\n\n[1] 168.4615\n\n\nNotice from the above we can perform the main arithmetic commands using keyboard symbols: + (add); - (minus); * (multiply); / (divide); ^ (power)\nObjects can change values when you run code. For example in the code below:\n\na &lt;- 2000\nb &lt;- 5\n\na &lt;- b\n\na &lt;- a * b\nprint(a)\n\n[1] 25\n\n\nWhat’s going on here?\n\nline 1 sets a to equal 2000 (note: don’t use commas in writing numbers a &lt;- 2,000 would bring up an error),\nline 2 sets b to equal 5,\nline 4 overwrites the value of a with the value stored in b, making object a now equal to 5\nline six is now 5 * 5\n\n\n3.1.1 Questions\n\nwhat are the outputs of the following code snippets/what do they do? One of the examples might not output anything, why is that? Type the code into your script file to check your answers:\ncode example 1\n\nrabbits &lt;- 50\nfeet &lt;- 4\n\ntotalfeet &lt;- rabbits * feet\nprint(totalfeet)\n\n\n\nanswer\n200\n\n\ncode example 2\n\np &lt;- 3.14 - 0.14\nr &lt;- 5\n\nprint(p * r^2)\n\n\n\nanswer\n75\n\n\ncode example 3\n\ntax &lt;- 17.5\nprice &lt;- 4.50\nsales &lt;- 128\ntax &lt;- 20\n\nincome &lt;- (sales * price) * (1 + (tax/100))\n\n\n\nanswer\n# prints nothing! there isn't a print statement",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#naming-objects",
+    "href": "chapters/1_intro.html#naming-objects",
+    "title": "Intro",
+    "section": "3.2 Naming objects",
+    "text": "3.2 Naming objects\nCorrectly naming objects is very important. You can give an object almost any name, but there are a few rules to follow:\n\nName them something sensible\nR is case sensitive, myName is not equal to (!=) myname\nDon’t use spaces in names\nDon’t start a name with a number\nKeep punctuation in object names to underscore (_ and full stop .) e.g. my_name, my.name.\nStick to a convention for all your objects, it’ll make your code easier to read, e.g.\n\nmyName, yourName, ourName (this is camelCase 2)\nmy_name, your_name, our_name (this is snake case)\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe actual name of an object has no effect on what it does (other than invalid names breaking your program!). For example age &lt;- \"Barry\" is perfectly valid to R, it’s just a real pain for a human to read.\n\n\n\n3.2.1 Questions\n\nWhich of these are valid R object names:\n\nmy_Number\nmy-Number\nmyNumber!\nfirst name\nFIRSTname\ni\n3names\nnames3\n\n\n\nanswers\n# my_Number  (VALID)\n# my-Number  (INVALID due to -)\n# myNumber!  (INVALID due to !)\n# first name (INVALID due to space)\n# FIRSTname  (VALID but we don't recommend so many caps)\n# i          (VALID)\n# 3names     (INVALID starts with a 3)\n# names3     (VALID)\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nFor more information on the R programming style guide, see this",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#comments",
+    "href": "chapters/1_intro.html#comments",
+    "title": "Intro",
+    "section": "3.3 Comments",
+    "text": "3.3 Comments\nCode can often look confusing and it’s a good idea to add # comments to your code to make it more understandable for you and others. The computer ignores comments when running your code:\n\n# this calculates the average sales per shop\n\nincome1 &lt;- 132\nincome2 &lt;- 665\nincome3 &lt;- 233\nincome4 &lt;- 1200\n\nshops &lt;- 4 # everything after the hash is a comment\n\navgSales &lt;- sum(income1, income2, income3, income4) / shops  \n\n# sometimes you might want to comment out code that\n# is no longer needed, but might be useful later\n# standard_deviation &lt;- sd(c(income1, income2, income3, income4) )\n# the above code isn't run\n\nprint(avgSales) # but this code is\n\n[1] 557.5",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#sec-datatypes",
+    "href": "chapters/1_intro.html#sec-datatypes",
+    "title": "Intro",
+    "section": "3.4 Datatypes",
+    "text": "3.4 Datatypes\nWe have already met two different datatypes, the character datatype for words and letters (e.g. \"Peter\") and the numeric datatype for numbers (e.g. 12). Datatypes tell R how to handle data in certain circumstances. Sometimes data will be of the wrong datatype and you will need to convert between datatypes.\n\nweeks &lt;- 4\ndays_in_week &lt;- \"7\"\n\n# we now attempt to multiply a number by a string\n# but it doesn't work!\ntotal_days &lt;- weeks * days_in_week \n\nError in `weeks * days_in_week`:\n! non-numeric argument to binary operator\n\n\nWhilst R will understand what to do when we multiply numbers with numbers, it gets very confused and raises an error when we try to perform an arithmetic operation using words and numbers.\nTo perform the calculation we will need to convert the days_in_week from a string to a number, using the as.numeric(&lt;text&gt;) command:\n\nweeks &lt;- 4\ndays_in_week &lt;- \"7\"\n\n# we now attempt to multiply a number by a string\ntotal_days &lt;- weeks * as.numeric(days_in_week)\n\nThere is a logical datatype for boolean values of TRUE and FALSE. This will become a lot more useful later.\n\nlegs_snake &lt;- FALSE # you can specify logical values directly\ndogs_legs &lt;- 4\nlegs_dog &lt;- dogs_legs &gt; 0 # or as part of a calculation\n\n# Do dog's have legs?\nprint(legs_dog)\n\n[1] TRUE\n\n\nThere are actually three datatypes for numbers in R, numeric for most of your work, the rarer integer specifically for whole numbers and the even rarer complex for complex numbers. When you are looking at categorical data, factors are used on top of the underlying datatype to store the different values, for example you might have a field of character to store countries, factors would then list the different countries stored in this character field.\nTo change from one datatype to another we use the as.____ command: as.numeric(&lt;text&gt;), as.logical(&lt;data&gt;), as.character(&lt;numeric&gt;).\n\n3.4.1 Questions\n\n\nCan you spot the error(s) in this code and fix them so it outputs: “July is month 7”?\n\n\nmonth &lt;- \"July\"\norder &lt;- 7\n  \nprint(month)\nPrint(\"is\")\nprint(month)\nprint(\"order\")\n\n\n\nanswer\nmonth &lt;- \"July\"\norder &lt;- 7\n  \nprint(month)    \nprint(\"is\")     #1 print needs a lowercase p\nprint(\"month\")  #2 month is a character not an object, use speech marks\nprint(order)    #3 order is an object, not a character, so drop the speech marks\n\n\n\nCan you spot the error(s) in this code and fix it?\n\n\na &lt;- 7\nb &lt;- \"8\"\nc &lt; - 3\n  \nprint(a + b + c)\n\n\n\nanswer\na &lt;- 7\nb &lt;- 8 #1 b is numeric so drop the speech marks\nc &lt;- 3 #2 the arrow needs to be together, remove the space\n  \nprint(a + b + c)\n\n\n\nCan you spot the error(s) in this code and fix it?\n\n\npass mark &lt;- 50 \nexam_grade &lt;- 50\n\n# did the student pass?\nprint(exam_grade &gt; pass_mark)\n\n\n\nanswer\npass_mark &lt;- 50 #1 the variable name can't have any spaces\nexam_grade &lt;- 50\n\n# did the student pass?\nprint(exam_grade &gt;= pass_mark) # this needs to be &gt;= as they had a passing grade\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIf you want to find out the datatype of an object you can use the structure str command to give you more information about the object. In this instance chr means that month is of character datatype and num means it is of the numeric datatype.\n\nmonth &lt;- \"July\"\nstr(month)\n\n chr \"July\"\n\nmonth &lt;- 7\nstr(month)\n\n num 7",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#questions-3",
+    "href": "chapters/1_intro.html#questions-3",
+    "title": "Intro",
+    "section": "4.1 Questions",
+    "text": "4.1 Questions\n\n\nCan you spot the three problems with this code:\n\n\nnums &lt;- v(1,2,\"3\",4,7,2,2)\nsum(nums)\nmean(nums)\n# return a vector of all numbers greater than 2\nnums(nums &gt;= 2)\n\n\n\nanswer\nnums &lt;- c(1,2,3,4,7,2,2) \n#1 a vector is declared using c(), not v()\n#2 3 should be numeric, so no need for speech marks\n# (though technically R would do this conversion for you!)\n\nsum(nums)\nmean(nums)\n# return a vector of all numbers greater than 2\nnums[nums &gt;= 2] #3 to pick items from another vector, use square brackets\n\n\n\nCreate a vector to store the number of glasses of water you have drunk for each day in the last 7 days. Work out:\n\nthe mean average number of glasses for the week,\nthe total number of glasses,\nthe number of days where you drank less than 2 glasses (feel free to replace water with your own tipple: wine, coffee, tea, coke, etc.)\n\n\n\n\nanswer\nglasses &lt;- c(6,1,3,2,3,0,3)\nmean(glasses)\nsum(glasses)\nsum(glasses &lt; 2)\n\n\n\nUsing the vectors below, create a program that will find out the average grade for females taking English:\n\n\nenglish_grade &lt;- c(8,5,3,2,3,6,9)\ngenders &lt;- c(\"F\", \"M\", \"M\", \"F\", \"M\", \"F\", \"M\")\n\n\n\nanswer\nenglish_grade &lt;- c(8,5,3,2,3,6,9)\ngenders &lt;- c(\"F\", \"M\", \"M\", \"F\", \"M\", \"F\", \"M\")\nmean(english_grade[genders == \"F\"])",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#sec-load-run-pckges",
+    "href": "chapters/1_intro.html#sec-load-run-pckges",
+    "title": "Intro",
+    "section": "6.1 Installing and loading packages",
+    "text": "6.1 Installing and loading packages\nTo install a package you can use the package tab in the bottom right-hand panel of RStudio and follow the steps from Section 1.3. Alternatively you can install things by typing:\n\ninstall.packages(\"tidyverse\")\n\nNote that the instruction is to install packages, you can pass a vector of package names to install multiple packages at the same time:\n\ninstall.packages(c(\"tidyverse\",\"readxl\",\"haven\"))\n\nOnce a package is installed it doesn’t mean that you can use it, yet. You will need to load the package. To do this you need to use the library(&lt;package_name&gt;) command, for example:\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nImportant\n\n\n\nSome packages might use the same function names as other packages, for example select might do different things depending on which package you loaded last. As a rule of thumb, when you start RStudio afresh, make sure that you load the tidyverse package after you have loaded all your other packages. To read more about this problem see ?@sec-QANDA",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#the-tidyverse",
+    "href": "chapters/1_intro.html#the-tidyverse",
+    "title": "Intro",
+    "section": "6.2 The Tidyverse",
+    "text": "6.2 The Tidyverse\nThis course focuses on using the tidyverse; a free collection of programming packages that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.\n\n\n\nData science workflow - RStudio\n\n\nFor many people the tidyverse is the main reason that they use R. The tidyverse is used widely in government, academia, NGOs and industry, notable examples include the Financial Times and the BBC. Code in the tidyverse can be (relatively) easily understood by others and you, when you come back to a project after several months.\n\n# load the tidyverse packages\nlibrary(tidyverse)\n\n# download Covid data from website\ndeaths &lt;- read.csv(\"https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/excess_mortality/excess_mortality.csv\")\n\ndeaths &lt;- deaths %&gt;% \n     filter(location %in% \n              c(\"United States\", \"United Kingdom\", \n                \"Sweden\", \"Germany\")) %&gt;%\n  mutate(date = as.Date(date))\n\nggplot(data=deaths) +\n  geom_line(aes(x = date, \n                y = excess_per_million_proj_all_ages, \n                colour=location)) +\n  theme(legend.position=\"bottom\")\n\n\n\n\n\n\n\nNote\n\n\n\nTry this out\nThe code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing control | command ⌘ and Enter",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#proper-addresses",
+    "href": "chapters/1_intro.html#proper-addresses",
+    "title": "Intro",
+    "section": "11.1 Proper addresses",
+    "text": "11.1 Proper addresses\nYou might have found that you get an error if you don’t convert your backslashes \\ into forwardslashes /. It’s common mistake and very annoying. In most programming languages a backslash signifies the start of a special command, for example \\n signifies a newline.\nWith R there are three ways to get around the problem of backslashes in file locations, for the location:\"C:\\myfolder\\\" we could:\n\nreplace them with forwardslashes (as shown above):\"C:/myfolder/\"\nreplace them with double backslashes (the special character specified by two backslashes is one backslash!):\"C:\\\\myfolder\\\\\"\nuse the inbuilt R command to deal with filenames: r\"[C:\\myfolder\\]\"",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/1_intro.html#footnotes",
+    "href": "chapters/1_intro.html#footnotes",
+    "title": "Intro",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAs of December 2022, Tiobe has R as the 11th most popular programming language. Many other, contradictory, ranking systems exist.↩︎\ncamelCase has a capital letter in the front or front and middle forming the camel’s hump(s), there are multiple naming conventions, it doesn’t matter which you pick, just stick to one of them.↩︎\nR was created to allow for vector programming, that is a programming language where you can apply operations to entire sets of values (vectors) at the same time, rather than having to cycle through them individually. Vector languages work in a way that is close to how mathematical notation works, making them well suited for performing mathematical functions.↩︎\nYou’ll sometimes see the words package and library used interchangeably, technically the library is the place where the packages are stored.↩︎",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Introduction to R"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html",
+    "href": "chapters/3_email.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "Describe your analytical approach here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#methods",
+    "href": "chapters/3_email.html#methods",
+    "title": "Analysis",
+    "section": "",
+    "text": "Describe your analytical approach here.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#results",
+    "href": "chapters/3_email.html#results",
+    "title": "Analysis",
+    "section": "2 Results",
+    "text": "2 Results\nPresent your analysis and results here.\n\n# Your R code here",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  }
+]
