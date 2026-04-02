@@ -206,9 +206,9 @@
   {
     "objectID": "chapters/4_officer.html",
     "href": "chapters/4_officer.html",
-    "title": "Results",
+    "title": "Officer",
     "section": "",
-    "text": "Summarise your key findings here.",
+    "text": "Officer is a package that allows you to write Office documents. It allows you to create word and PowerPoint documents, to manipulate text, format contents, including graphs from R, and produce tables.\nThe first time you use it, you will need to run `install.packages(“officer”), then use library(officer) to invoke the package.\n\nlibrary(officer)\n\nMake sure you have the dummy_student_record.xlsx file loaded\n\nstudent_data &lt;- read_xlsx(glue(\"{proj_folder}/dummy_student_records.xlsx\"))\n\nThe create a new document to edit\n\n# Create a new Word document\ndoc &lt;- read_docx()\n\nTo add a title to the document, you can use body_add_par, setting the style parameter to “heading 1”. Text can then be entered in the same way, with style = \"Normal\". I then add two blank lines to space out the text from the table.\n\n# Add a title\ndoc &lt;- doc %&gt;%\n  body_add_par(\"Student Report\", style = \"heading 1\") %&gt;%\n  body_add_par(\"This table shows the students' names, countries and Gender\", style = \"Normal\") %&gt;%\n  body_add_par(\"\") %&gt;%   # first blank line\n  body_add_par(\"\")       # second blank line\n\nTo add a table, you can use the flextable package, which makes pretty tables. You need to first run: install.packages(\"flextable\") then library(flextable). We will select only student names and their semester 1 modules, to keep the table a sensible width. The autofit() function ensures the table fits on the page - we apply that before adding the table to the doc using body_add_flextable\n\nlibrary(flextable)\n\n# Add the dataframe as a table\n\ntable_data &lt;- student_data %&gt;%    # select just the columns we want\n  select(Name, Country, Gender)\n\nft &lt;- flextable(table_data)        # turn dataframe into a nicely formatted table\nft &lt;- autofit(ft)          # adjust column widths automatically\n\ndoc &lt;- doc %&gt;%\n  body_add_flextable(ft)   # add the table to the document\n\nTo save the document you can use print() setting a file path for the output document. Make sure the file path finishes with a .docx file. For example here: /Users/k1765032/Downloads/test_word_document.docx\n\n# Save the document\nprint(doc, target = \"/Users/k1765032/Downloads/test_word_document.docx\")",
     "crumbs": [
       "Home",
       "Course Contents",
@@ -489,6 +489,30 @@
       "Home",
       "Course Contents",
       "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html#introduction",
+    "href": "chapters/4_officer.html#introduction",
+    "title": "Officer",
+    "section": "",
+    "text": "Officer is a package that allows you to write Office documents. It allows you to create word and PowerPoint documents, to manipulate text, format contents, including graphs from R, and produce tables.\nThe first time you use it, you will need to run `install.packages(“officer”), then use library(officer) to invoke the package.\n\nlibrary(officer)\n\nMake sure you have the dummy_student_record.xlsx file loaded\n\nstudent_data &lt;- read_xlsx(glue(\"{proj_folder}/dummy_student_records.xlsx\"))\n\nThe create a new document to edit\n\n# Create a new Word document\ndoc &lt;- read_docx()\n\nTo add a title to the document, you can use body_add_par, setting the style parameter to “heading 1”. Text can then be entered in the same way, with style = \"Normal\". I then add two blank lines to space out the text from the table.\n\n# Add a title\ndoc &lt;- doc %&gt;%\n  body_add_par(\"Student Report\", style = \"heading 1\") %&gt;%\n  body_add_par(\"This table shows the students' names, countries and Gender\", style = \"Normal\") %&gt;%\n  body_add_par(\"\") %&gt;%   # first blank line\n  body_add_par(\"\")       # second blank line\n\nTo add a table, you can use the flextable package, which makes pretty tables. You need to first run: install.packages(\"flextable\") then library(flextable). We will select only student names and their semester 1 modules, to keep the table a sensible width. The autofit() function ensures the table fits on the page - we apply that before adding the table to the doc using body_add_flextable\n\nlibrary(flextable)\n\n# Add the dataframe as a table\n\ntable_data &lt;- student_data %&gt;%    # select just the columns we want\n  select(Name, Country, Gender)\n\nft &lt;- flextable(table_data)        # turn dataframe into a nicely formatted table\nft &lt;- autofit(ft)          # adjust column widths automatically\n\ndoc &lt;- doc %&gt;%\n  body_add_flextable(ft)   # add the table to the document\n\nTo save the document you can use print() setting a file path for the output document. Make sure the file path finishes with a .docx file. For example here: /Users/k1765032/Downloads/test_word_document.docx\n\n# Save the document\nprint(doc, target = \"/Users/k1765032/Downloads/test_word_document.docx\")",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
+    ]
+  },
+  {
+    "objectID": "chapters/4_officer.html#adding-a-chart",
+    "href": "chapters/4_officer.html#adding-a-chart",
+    "title": "Officer",
+    "section": "0.2 Adding a chart",
+    "text": "0.2 Adding a chart\nFirst, create your chart using ggplot and assign it to an object (here named plot_diss)\n\nplot_diss &lt;- ggplot(student_data, aes(x = `7SSEM066 - Research Methods and Dissertation (60 credits)`)) +\n  geom_histogram(fill = \"darkgreen\") +\n  labs(x = \"dissertation score\", y= \"count\", title = \"distribution of dissertation scores\")\n\nWe can then add the graph to the document with body_add_gg setting its width and height.\n\ndoc &lt;- doc %&gt;%\n    body_add_gg(plot_diss, width = 6, height = 4)   # add the plot\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Officer"
     ]
   }
 ]
