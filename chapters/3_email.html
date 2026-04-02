@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analysis – ECS Professional services R course</title>
+<title>Emailing in R – ECS Professional services R course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -216,8 +216,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods"><span class="header-section-number">1</span> Methods</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2</span> Results</a></li>
+  <li><a href="#using-r-to-email" id="toc-using-r-to-email" class="nav-link active" data-scroll-target="#using-r-to-email"><span class="header-section-number">1</span> Using R to email</a></li>
+  <li><a href="#loading-a-spreadsheet-of-data" id="toc-loading-a-spreadsheet-of-data" class="nav-link" data-scroll-target="#loading-a-spreadsheet-of-data"><span class="header-section-number">2</span> Loading a spreadsheet of data</a></li>
+  <li><a href="#emailing-names-in-a-spreadsheet" id="toc-emailing-names-in-a-spreadsheet" class="nav-link" data-scroll-target="#emailing-names-in-a-spreadsheet"><span class="header-section-number">3</span> Emailing names in a spreadsheet</a></li>
+  <li><a href="#creating-custom-text" id="toc-creating-custom-text" class="nav-link" data-scroll-target="#creating-custom-text"><span class="header-section-number">4</span> Creating custom text</a></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Course Contents</a></li><li class="breadcrumb-item"><a href="../chapters/3_email.html">Emailing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Analysis</h1>
+<h1 class="title">Emailing in R</h1>
 </div>
 
 
@@ -243,15 +245,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="methods" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="methods"><span class="header-section-number">1</span> Methods</h2>
-<p>Describe your analytical approach here.</p>
+<section id="using-r-to-email" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="using-r-to-email"><span class="header-section-number">1</span> Using R to email</h2>
+<p>The package <code>Microsoft365R</code> is a useful tool for interacting with your Office account via R. This means you can create mass emails from a spreadsheet, and customise the body text of the messages.</p>
 </section>
-<section id="results" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="results"><span class="header-section-number">2</span> Results</h2>
-<p>Present your analysis and results here.</p>
+<section id="loading-a-spreadsheet-of-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="loading-a-spreadsheet-of-data"><span class="header-section-number">2</span> Loading a spreadsheet of data</h2>
+<p>To test the approach, we will load a spreadsheet of data which has names and email addresses in. This is stored on OneDrive here: <a href="https://emckclac-my.sharepoint.com/:x:/g/personal/k1765032_kcl_ac_uk/IQCLX-TmQHH6TrDj0QwmK-3BAbV6pXm-WrkmeTSM_HzMEjY?e=Savurn">mail_data</a>. The spreadsheet includes names, email addresses and some other data.</p>
+<p>Download the spreadsheet.</p>
+<p>First let us load the data using <code>readxlsx</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your R code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mail_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="fu">glue</span>(<span class="sc">&lt;</span>your folder<span class="sc">&gt;</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The first time you use it, you need to run <code>install.packages("Microsoft365R")</code> then we can invoke the library.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Microsoft365R)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Next, authenticate to get access to your email. Running that command will force a webpage to open in which you need to use the normal KCL Microsoft login to access your mail. When that has completed, you will see the message:</p>
+<p><strong>Authenticated with Azure Active Directory. Please close this page and return to R.</strong></p>
+<p>You can close the webpage and continue to the next step.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_outlook <span class="ot">&lt;-</span> <span class="fu">get_business_outlook</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading Microsoft Graph login for default tenant</code></pre>
+</div>
+</div>
+<p>To create an email, you can use the function <code>my_outlook</code>. The simplest way to create a message is to manually pass the information. The first parameter is the text of the message, then you can give the message title using <code>subject = "Test message"</code> and the recipient in <code>to = richard.brock@kcl.ac.uk</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_email <span class="ot">&lt;-</span> my_outlook<span class="sc">$</span><span class="fu">create_email</span>(<span class="st">"Test message"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">subject =</span> <span class="st">"Test message"</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">to =</span> <span class="st">"richard.brock@kcl.ac.uk"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>That will create a message in the draft folder of Outlook, which looks like this:</p>
+<p><img src="images/email_draft.png" class="img-fluid"> You can send the message manually from your draft folder - it is probably a good idea to create draft emails and check them. R can also automate sending the messages, using the command <code>my_email$send()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_email<span class="sc">$</span><span class="fu">send</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="emailing-names-in-a-spreadsheet" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="emailing-names-in-a-spreadsheet"><span class="header-section-number">3</span> Emailing names in a spreadsheet</h2>
+<p>The power of the package comes from the ability to send multiple emails. We can now use the spreadsheet of email addresses to send multiple messages. To do that we are going to learn about loops. A loop is a programming structure that repeats a function a specific number of times. For example the simple loop below. The loop starts with <code>for</code> and then we define a variable (<code>i</code>) which we will use to iterate the loop (the variable i is going to increase by one each time the loop goes round). Next we define how many times to loop <code>(i in 1:10)</code> - we will start from 1 and go round the loop 10 times. Inside the brackets <code>{}</code> we put the code we want to repeat. Here we will print “hello” and the varibale i. The <code>paste</code> function joins the word and the number.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"hello"</span>, i))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hello 1"
+[1] "hello 2"
+[1] "hello 3"
+[1] "hello 4"
+[1] "hello 5"
+[1] "hello 6"
+[1] "hello 7"
+[1] "hello 8"
+[1] "hello 9"
+[1] "hello 10"</code></pre>
+</div>
+</div>
+<p>We can apply a loop to sending emails. We can loop over our spreadsheet, and use the data in each row to generate one new draft email.</p>
+<p>First, we don’t want to run from 1 to 10 this time, but we run from 1 to the number or entries in our spreadsheet. We get the number of rows using <code>nrow(mail_data)</code> - that means we don’t have to update the code if we add a new row. We also want to change the address for each row. Here we can point to the column of addresses using <code>mail_data$Email</code>. Then we want to first select, the address in the first row, then the address in the second row, etc. To do that we set the address to <code>mail_data$Email[i]</code> - where <code>[i]</code> refers to row number i. You can test this by typing:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this gives the address in the first row</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mail_data<span class="sc">$</span>Email[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "richard.brock@kcl.ac.uk"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this gives the address in the second row</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mail_data<span class="sc">$</span>Email[<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "peter.kemp@kcl.ac.uk"</code></pre>
+</div>
+</div>
+<p>We can use a loop to access all the addresses, looping over all the rows in the data frame.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mail_data)) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(mail_data<span class="sc">$</span>Email[i])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "richard.brock@kcl.ac.uk"
+[1] "peter.kemp@kcl.ac.uk"</code></pre>
+</div>
+</div>
+<p>We can now create a loop that goes through all the rows in the data frame and creates a draft email, containing the text “Hello” with the subject “Test” to the emails addressed listed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mail_data)) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  my_email <span class="ot">&lt;-</span> my_outlook<span class="sc">$</span><span class="fu">create_email</span>(<span class="st">"Hello"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">subject =</span> <span class="st">"Test"</span>, <span class="at">to =</span> mail_data<span class="sc">$</span>Email[i])</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="creating-custom-text" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="creating-custom-text"><span class="header-section-number">4</span> Creating custom text</h2>
+<p>You may well also want the body text of the message to vary, for example, you may want to have the greeting change for each individual in the data frame. Note that the names of individuals are stored in the dataframe in the vector <code>First_name</code>.</p>
+<p>To create a single block of text, we will use the <code>paste0</code> function - this joins together (pastes) several vectors to make a block of text - note by default a space is added between the joined vectors. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Dear"</span>, <span class="st">"Richard"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Dear Richard"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>part1 <span class="ot">&lt;-</span> <span class="st">"Hi"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>part2 <span class="ot">&lt;-</span> <span class="st">"Richard"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(part1, part2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hi Richard"</code></pre>
+</div>
+</div>
+<p>We can use paste and data from the spreadsheet to make a custom message in the loop. To add returns we use the character <code>"\r"</code> - think of this as pressing return twice.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mail_data)) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  my_email <span class="ot">&lt;-</span> my_outlook<span class="sc">$</span><span class="fu">create_email</span>(<span class="fu">paste</span>(<span class="st">"Dear"</span>, mail_data<span class="sc">$</span>First_name[i],<span class="st">","</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Body text I want in my email."</span>, </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Best wishes,"</span>, </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\r</span><span class="st">"</span>, </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Richard"</span>), </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">subject =</span> <span class="st">"Email subject"</span>, <span class="at">to =</span> mail_data<span class="sc">$</span>Email[i])</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

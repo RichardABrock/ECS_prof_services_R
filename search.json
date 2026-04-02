@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ECS Professional services R course",
     "section": "",
-    "text": "[cite_start]This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: * Introduction to R: Getting familiar with the environment. * Introduction to coding and tidyverse: Learning the basics of coding * Emailing: Automating communications. * Officer: Generating Word and PowerPoint documents.",
+    "text": "This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: - Introduction to R: Getting familiar with the environment.\n\nIntroduction to coding and tidyverse: Learning the basics of coding\nEmailing: Automating communications.\nOfficer: Generating Word and PowerPoint documents.",
     "crumbs": [
       "Home",
       "Course Contents",
@@ -16,7 +16,7 @@
     "href": "index.html#introduction",
     "title": "ECS Professional services R course",
     "section": "",
-    "text": "[cite_start]This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: * Introduction to R: Getting familiar with the environment. * Introduction to coding and tidyverse: Learning the basics of coding * Emailing: Automating communications. * Officer: Generating Word and PowerPoint documents.",
+    "text": "This website introduces using R to help automate some professional services functions.\n\n\nUse the sidebar on the left to navigate through the course modules: - Introduction to R: Getting familiar with the environment.\n\nIntroduction to coding and tidyverse: Learning the basics of coding\nEmailing: Automating communications.\nOfficer: Generating Word and PowerPoint documents.",
     "crumbs": [
       "Home",
       "Course Contents",
@@ -292,7 +292,7 @@
     "href": "chapters/1_intro.html#sec-packages",
     "title": "Intro",
     "section": "1.3 Setting up RStudio and the tidyverse",
-    "text": "1.3 Setting up RStudio and the tidyverse\n\nOpen RStudio\nOn the bottom right-hand side, select Packages, then select Install, then type “tidyverse” into the Packages field of the new window:\n\nClick Install and you should see things happening in the console (bottom left). Wait for the console activity to finish (it’ll be downloading and checking packages). If it asks any questions, type N for no and press enter.\nAdd a new R Script using the  button\n\nIn the new R script, write the following:\n\nSelect all the lines and press Control or Command ⌘ and Enter on your keyboard at the same time. Alternatively, press the  button\n\nCheck that you have the following in the console window (depending on your screen size you might have fewer columns):\n\nInstall the arrow package, repeat step 2, above.\nDownload the dummy_student_records dataset from here and download it on your computer, make a note of the full folder location where you have saved this!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you need help with finding the full folder location of your file, often a hurdle for Mac users, go to Section 10\n\n\n\nCopy the following code and replace &lt;folder&gt; with the full folder location of where your dataset was saved, make sure that you have .parquet on the end. And keep the (r\"[  ]\")! Make sure you run all the lines in the code below, including the library(readxl) and library(tidyverse) lines.\n\n\n\nexamples of what this should look like for PC and Mac\n# For Pete (PC) the address format was:\nstudent_data &lt;- read_xlsx(r\"[C:\\Users\\Peter\\KCL\\ProfR\\dummy_student_records.xlsx]\")\n\n# For Richard (Mac) the address format was:\nstudent_data &lt;- read_xlsx(r\"[/Users/k1765032/Library/CloudStorage/OneDrive-King\\'sCollegeLondon/Prof_serv_R/dummy_student_records.xlsx]\")\n\n\n\nlibrary(readxl)\nlibrary(tidyverse)\n\nPISA_2022 &lt;- read_xlsx(r\"[&lt;folder&gt;dummy_student_records.xlsx]\")\n\n\nUnderneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it. Try and figure out what each line does and what it’s telling you.\n\n\nlibrary(tidyverse)\n\nstudent_data %&gt;%\n  select(Gender, `7SSES009 - Quantitative Methods in the Context of Education Research`) %&gt;%\n  group_by(Gender) %&gt;%\n  summarise(mean_score = mean(`7SSES009 - Quantitative Methods in the Context of Education Research`, na.rm =T),\n            count = n())\n\n\nThat’s it, you should be set up!\nAny issues, please drop a message on the Teams group, or mail peter.kemp@kcl.ac.uk and richard.brock@kcl.ac.uk",
+    "text": "1.3 Setting up RStudio and the tidyverse\n\nOpen RStudio\nOn the bottom right-hand side, select Packages, then select Install, then type “tidyverse” into the Packages field of the new window:\n\nClick Install and you should see things happening in the console (bottom left). Wait for the console activity to finish (it’ll be downloading and checking packages). If it asks any questions, type N for no and press enter.\nAdd a new R Script using the  button\n\nIn the new R script, write the following:\n\nSelect all the lines and press Control or Command ⌘ and Enter on your keyboard at the same time. Alternatively, press the  button\n\nCheck that you have the following in the console window (depending on your screen size you might have fewer columns):\n\nInstall the arrow package, repeat step 2, above.\nDownload the dummy_student_records dataset from here and download it on your computer, make a note of the full folder location where you have saved this!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you need help with finding the full folder location of your file, often a hurdle for Mac users, go to Section 10\n\n\n\nCopy the following code and replace &lt;folder&gt; with the full folder location of where your dataset was saved.\n\n\n\n\n\n\n\nTip\n\n\n\nTo find the path to your file you can run: file.choose() in the console. Click where you see the blue &gt; at the bottom of your screen and type file.choose() and hit return. You will get a file finder window. Navigate to the file, click Open - that will print a file path for the file:\n\n“/Users/k1765032/Library/CloudStorage/OneDrive-King’sCollegeLondon/Prof_serv_R/dummy_student_records.xlsx”\n\n\n\nAnd keep the (r\"[  ]\")! Make sure you run all the lines in the code below, including the library(readxl) and library(tidyverse) lines.\n\n\nexamples of what this should look like for PC and Mac\n# For Pete (PC) the address format was:\nstudent_data &lt;- read_xlsx(r\"[C:\\Users\\Peter\\KCL\\ProfR\\dummy_student_records.xlsx]\")\n\n# For Richard (Mac) the address format was:\nstudent_data &lt;- read_xlsx(r\"[/Users/k1765032/Library/CloudStorage/OneDrive-King\\'sCollegeLondon/Prof_serv_R/dummy_student_records.xlsx]\")\n\n\n\nlibrary(readxl)\nlibrary(tidyverse)\n\nPISA_2022 &lt;- read_xlsx(r\"[&lt;folder&gt;dummy_student_records.xlsx]\")\n\n\nUnderneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it. Try and figure out what each line does and what it’s telling you.\n\n\nlibrary(tidyverse)\n\nstudent_data %&gt;%\n  select(Gender, `7SSES009 - Quantitative Methods in the Context of Education Research`) %&gt;%\n  group_by(Gender) %&gt;%\n  summarise(mean_score = mean(`7SSES009 - Quantitative Methods in the Context of Education Research`, na.rm =T),\n            count = n())\n\n\nThat’s it, you should be set up!\nAny issues, please drop a message on the Teams group, or mail peter.kemp@kcl.ac.uk and richard.brock@kcl.ac.uk",
     "crumbs": [
       "Home",
       "Course Contents",
@@ -410,9 +410,9 @@
   {
     "objectID": "chapters/3_email.html",
     "href": "chapters/3_email.html",
-    "title": "Analysis",
+    "title": "Emailing in R",
     "section": "",
-    "text": "Describe your analytical approach here.",
+    "text": "The package Microsoft365R is a useful tool for interacting with your Office account via R. This means you can create mass emails from a spreadsheet, and customise the body text of the messages.",
     "crumbs": [
       "Home",
       "Course Contents",
@@ -437,6 +437,54 @@
     "title": "Analysis",
     "section": "2 Results",
     "text": "2 Results\nPresent your analysis and results here.\n\n# Your R code here",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#using-r-to-email",
+    "href": "chapters/3_email.html#using-r-to-email",
+    "title": "Emailing in R",
+    "section": "",
+    "text": "The package Microsoft365R is a useful tool for interacting with your Office account via R. This means you can create mass emails from a spreadsheet, and customise the body text of the messages.",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#loading-a-spreadsheet-of-data",
+    "href": "chapters/3_email.html#loading-a-spreadsheet-of-data",
+    "title": "Emailing in R",
+    "section": "2 Loading a spreadsheet of data",
+    "text": "2 Loading a spreadsheet of data\nTo test the approach, we will load a spreadsheet of data which has names and email addresses in. This is stored on OneDrive here: mail_data. The spreadsheet includes names, email addresses and some other data.\nDownload the spreadsheet.\nFirst let us load the data using readxlsx\n\nmail_data &lt;- read_xlsx(glue(&lt;your folder&gt;))\n\nThe first time you use it, you need to run install.packages(\"Microsoft365R\") then we can invoke the library.\n\nlibrary(Microsoft365R)\n\nNext, authenticate to get access to your email. Running that command will force a webpage to open in which you need to use the normal KCL Microsoft login to access your mail. When that has completed, you will see the message:\nAuthenticated with Azure Active Directory. Please close this page and return to R.\nYou can close the webpage and continue to the next step.\n\nmy_outlook &lt;- get_business_outlook()\n\nLoading Microsoft Graph login for default tenant\n\n\nTo create an email, you can use the function my_outlook. The simplest way to create a message is to manually pass the information. The first parameter is the text of the message, then you can give the message title using subject = \"Test message\" and the recipient in to = richard.brock@kcl.ac.uk.\n\nmy_email &lt;- my_outlook$create_email(\"Test message\",\n                                   subject = \"Test message\", \n                                   to = \"richard.brock@kcl.ac.uk\")\n\nThat will create a message in the draft folder of Outlook, which looks like this:\n You can send the message manually from your draft folder - it is probably a good idea to create draft emails and check them. R can also automate sending the messages, using the command my_email$send():\n\nmy_email$send()",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#emailing-names-in-a-spreadsheet",
+    "href": "chapters/3_email.html#emailing-names-in-a-spreadsheet",
+    "title": "Emailing in R",
+    "section": "3 Emailing names in a spreadsheet",
+    "text": "3 Emailing names in a spreadsheet\nThe power of the package comes from the ability to send multiple emails. We can now use the spreadsheet of email addresses to send multiple messages. To do that we are going to learn about loops. A loop is a programming structure that repeats a function a specific number of times. For example the simple loop below. The loop starts with for and then we define a variable (i) which we will use to iterate the loop (the variable i is going to increase by one each time the loop goes round). Next we define how many times to loop (i in 1:10) - we will start from 1 and go round the loop 10 times. Inside the brackets {} we put the code we want to repeat. Here we will print “hello” and the varibale i. The paste function joins the word and the number.\n\nfor (i in 1:10){\n  \n  print(paste(\"hello\", i))\n  \n}\n\n[1] \"hello 1\"\n[1] \"hello 2\"\n[1] \"hello 3\"\n[1] \"hello 4\"\n[1] \"hello 5\"\n[1] \"hello 6\"\n[1] \"hello 7\"\n[1] \"hello 8\"\n[1] \"hello 9\"\n[1] \"hello 10\"\n\n\nWe can apply a loop to sending emails. We can loop over our spreadsheet, and use the data in each row to generate one new draft email.\nFirst, we don’t want to run from 1 to 10 this time, but we run from 1 to the number or entries in our spreadsheet. We get the number of rows using nrow(mail_data) - that means we don’t have to update the code if we add a new row. We also want to change the address for each row. Here we can point to the column of addresses using mail_data$Email. Then we want to first select, the address in the first row, then the address in the second row, etc. To do that we set the address to mail_data$Email[i] - where [i] refers to row number i. You can test this by typing:\n\n# this gives the address in the first row\nmail_data$Email[1]\n\n[1] \"richard.brock@kcl.ac.uk\"\n\n# this gives the address in the second row\nmail_data$Email[2]\n\n[1] \"peter.kemp@kcl.ac.uk\"\n\n\nWe can use a loop to access all the addresses, looping over all the rows in the data frame.\n\nfor (i in 1:nrow(mail_data)) {\n print(mail_data$Email[i])\n}\n\n[1] \"richard.brock@kcl.ac.uk\"\n[1] \"peter.kemp@kcl.ac.uk\"\n\n\nWe can now create a loop that goes through all the rows in the data frame and creates a draft email, containing the text “Hello” with the subject “Test” to the emails addressed listed.\n\nfor (i in 1:nrow(mail_data)) {\n  my_email &lt;- my_outlook$create_email(\"Hello\",\n                                      subject = \"Test\", to = mail_data$Email[i])\n}",
+    "crumbs": [
+      "Home",
+      "Course Contents",
+      "Emailing"
+    ]
+  },
+  {
+    "objectID": "chapters/3_email.html#creating-custom-text",
+    "href": "chapters/3_email.html#creating-custom-text",
+    "title": "Emailing in R",
+    "section": "4 Creating custom text",
+    "text": "4 Creating custom text\nYou may well also want the body text of the message to vary, for example, you may want to have the greeting change for each individual in the data frame. Note that the names of individuals are stored in the dataframe in the vector First_name.\nTo create a single block of text, we will use the paste0 function - this joins together (pastes) several vectors to make a block of text - note by default a space is added between the joined vectors. For example:\n\nprint(paste(\"Dear\", \"Richard\"))\n\n[1] \"Dear Richard\"\n\npart1 &lt;- \"Hi\"\npart2 &lt;- \"Richard\"\n\nprint(paste(part1, part2))\n\n[1] \"Hi Richard\"\n\n\nWe can use paste and data from the spreadsheet to make a custom message in the loop. To add returns we use the character \"\\r\" - think of this as pressing return twice.\n\nfor (i in 1:nrow(mail_data)) {\n  my_email &lt;- my_outlook$create_email(paste(\"Dear\", mail_data$First_name[i],\",\",\n                                            \"\\r\", \"\\r\", \n                                            \"Body text I want in my email.\", \n                                            \"\\r\", \"\\r\",\n                                            \"Best wishes,\", \n                                            \"\\r\", \"\\r\", \n                                            \"Richard\"), \n                                      subject = \"Email subject\", to = mail_data$Email[i])\n}",
     "crumbs": [
       "Home",
       "Course Contents",

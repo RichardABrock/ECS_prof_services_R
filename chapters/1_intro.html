@@ -445,8 +445,25 @@ Note
 </div>
 </div>
 <ol start="10" type="1">
-<li>Copy the following code and replace <code>&lt;folder&gt;</code> with the full folder location of where your dataset was saved, make sure that you have <code>.parquet</code> on the end. And keep the <code>(r"[  ]")</code>! Make sure you run all the lines in the code below, including the <code>library(readxl)</code> and <code>library(tidyverse)</code> lines.</li>
+<li>Copy the following code and replace <code>&lt;folder&gt;</code> with the full folder location of where your dataset was saved.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To find the path to your file you can run: <code>file.choose()</code> in the console. Click where you see the blue &gt; at the bottom of your screen and type <code>file.choose()</code> and hit return. You will get a file finder window. Navigate to the file, click Open - that will print a file path for the file:</p>
+<blockquote class="blockquote">
+<p>“/Users/k1765032/Library/CloudStorage/OneDrive-King’sCollegeLondon/Prof_serv_R/dummy_student_records.xlsx”</p>
+</blockquote>
+</div>
+</div>
+<p>And keep the <code>(r"[  ]")</code>! Make sure you run all the lines in the code below, including the <code>library(readxl)</code> and <code>library(tidyverse)</code> lines.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>examples of what this should look like for PC and Mac</summary>
@@ -1282,10 +1299,10 @@ Note
   Name        overall_grade
   &lt;chr&gt;               &lt;dbl&gt;
 1 Casey Evans           140
-2 Casey Khan            136
-3 Sam Thomas            115
-4 Avery Evans           149
-5 Taylor Khan           127</code></pre>
+2 Casey Khan            108
+3 Casey Khan            136
+4 Sam Thomas            115
+5 Drew Thomas           106</code></pre>
 </div>
 </div>
 <p>You can also create your own dataframes by combining vectors, note you have to use an equals sign to do this, rather than the arrow assignment:</p>
